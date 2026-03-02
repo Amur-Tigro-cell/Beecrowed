@@ -1,0 +1,27 @@
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+bool isInteger(double x) {
+    return fabs(x - int(x)) < 1e-9;
+}
+
+int main() {
+    for (int i = 0; i <= 20; i += 2) { // I = i*0.1
+        double I = i / 10.0;
+        for (int k = 0; k < 3; k++) {
+            double J = I + 1 + k;
+
+            cout << "I=";
+            if (isInteger(I)) cout << int(I);
+            else cout << I;
+
+            cout << " J=";
+            if (isInteger(J)) cout << int(J);
+            else cout << J;
+
+            cout << endl;
+        }
+    }
+    return 0;
+}
